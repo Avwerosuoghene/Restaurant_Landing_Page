@@ -1,0 +1,740 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+
+:root {
+    --primary-font: Helvetica, sans-serif;
+    --secondary-font: Garamond;
+}
+
+*{
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+@keyframes centerEl {
+    0% {
+        top:60%;
+        opacity: 0;
+    }
+
+    100% {
+        top: 40%;
+        opacity: 1;
+    }
+}
+
+@keyframes pageshow {
+    0% {height: 100%;
+        opacity: 1;}
+    50% {
+        opacity: 1;
+    }
+    100% {height: 0;
+    opacity: 0;}
+}
+
+html {
+    margin: 0;
+    font-size: 1.2em;
+}
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* .section {
+    display: none
+} */
+
+h1 {
+    font-size: 2.5rem;
+    color: #fff;
+    font-family: var(--primary-font);
+    position: relative;
+}
+
+h2 {
+    font-family: var(--primary-font);
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-family: var(--primary-font);
+}
+
+
+.button {
+    padding: 15px 30px;
+    background: none;
+    border-radius: 50px;
+    border: 2px solid #fff;
+    transition: 0.3s ease;
+    cursor: pointer;
+    font-size: inherit;
+}
+
+.button:hover {
+    background-color: #fff;
+    color: black;
+}
+
+.section > * {
+    opacity: 0;
+    transition:opacity 1s ease-in;
+}
+
+.section.displayEl > * {
+    opacity: 1;
+}
+
+
+/* First Section Styling */
+
+
+.firstSection {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-image: url("/Images/minced-lula-kebab-widescreen.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: background-image 1s ease-in;
+}
+
+.navBar {
+    opacity: 0;
+}
+
+
+.menuview {
+    background-color: white;
+    width: 100vw;
+    height: 100vh;
+}
+
+.sliding-element {
+    width: 100%;
+    height: 100%;
+    background-color:rgb(23, 26, 29);
+    z-index: 100;
+}
+
+
+.firstSection::before {
+    content: " ";
+    background-color: rgba(31,46,58,0.3);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.firstSection:after {
+    content: "";
+    background-color:rgb(23, 26, 29); 
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    animation-name: pageshow;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+.nav {
+    position: absolute;
+    background: none;
+    border: none;
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.24);
+    top: 50%;
+    transform: translateY(-50%);
+    right: 2%;
+    cursor: pointer;
+    opacity: 1;
+}
+
+.nav:hover {
+    color: rgba(255, 255, 255, 0.849);
+    border: none;
+}
+
+.nav:active {
+    border: none;
+    color: rgba(255, 255, 255, 0.849);
+}
+
+.navleft {
+    /* transform-origin:top center; */
+    transform: rotate(180deg) translateY(52px);
+    left: 2%;
+}
+
+.menupop {
+    display: none;
+}
+
+header{
+    font-family: var(--secondary-font);
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width:100vw;
+    color: #fff;
+    height: 80px;
+    transition: 0.5s ease-in;
+    
+}
+
+header.showBackground {
+    background-color: #000;
+    position: fixed;
+    z-index: 1;
+}
+
+header.scroll {
+    background-color: #000;
+}
+
+
+.menuItems {
+    display: flex;
+    width: 500px;
+    justify-content: space-between;
+    position: absolute;
+    right: 120px;
+}
+
+header h3 {
+    position: absolute;
+    left: 120px;
+}
+
+header ul {
+    list-style: none;
+}
+
+.pageLink {
+    text-decoration: none;
+    color: #fff;
+    padding-bottom: 5px;
+}
+
+.pageLink.click {
+    /* border-bottom: solid white 1px; */
+}
+
+.centerElements {
+    margin: 0;
+    width :750px;
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 40%;
+    animation-name: centerEl;
+    animation-duration: 2s;
+}
+
+/* Second Section Styling */
+
+.secondSection {
+    width: 100vw;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Third Section Styling */
+
+.thirdSection {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("/Images/ronan-kruithof-PCE0T5i4pDI-unsplash\ \(1\).jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+    position: relative;
+    /* text-align: center; */
+    
+
+}
+
+.thirdSection::before {
+    content: " ";
+    background-color: rgba(126, 112, 59, 0.1);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.thirdSection h1 {
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20%;
+    text-align: center;
+}
+
+.section3Button {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 60%;
+    color: white;
+
+}
+
+/* Fourth Section Styling */
+
+.fourthSection {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.kitchemenu {
+    width: 22%;
+    height: 60%;
+    position: relative;
+    margin: 100px 20px 0;
+    text-align: justify;
+
+}
+
+.kitchemenu img {
+    width: 100%;
+}
+
+.section4Button {
+    position: absolute;
+    border-color: rgb(40, 47, 95);
+    bottom: 20%;
+}
+
+.section4Button:hover {
+    background-color: rgb(40, 47, 95);
+    color: #fff;
+}
+
+/* Fifth Section Styling */
+
+.fifthSection  {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("/Images/Kicthen.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.fifthSection  h1 {
+    font-size: 3.5rem;
+    color: rgba(11, 12, 12, 0.863);
+}
+
+/* Sixth Section Styling */
+
+.sixthSection {
+    width: 100vw;
+    height: 50vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chefs {
+    /* width: 22%; */
+    margin: 30px;
+    text-align:justify;
+}
+
+/* Footer */
+
+footer {
+    background-color: rgba(11, 12, 12, 0.863); 
+    display: flex;
+    width: 100vw;
+    height: 40vh;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.stateLocation {
+    margin: 0 50px 0;
+    width: 200px;
+
+}
+
+.locations {
+    position: absolute;
+    margin: 0;
+    top: 10%;
+    left: 25.6%;
+}
+
+
+
+@media (max-width: 1000px) {
+
+    @keyframes centerEl {
+        0% {
+            top:60%;
+            opacity: 0;
+        }
+    
+        100% {
+            top: 30%;
+            opacity: 1;
+        }
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    .firstSection {
+        height: 70vh;
+    }
+
+    header{
+        justify-content: right;
+    }
+
+   
+
+
+    .menuItems li{
+        display: none;
+    }
+
+    .navBar {
+        opacity: 1;
+        width:50px;
+        height: 50px;
+        background: none;
+        border: none;
+        position: relative;
+        margin-right: 5%;
+        transition: 0.5s ease;
+        cursor: pointer;
+        z-index: 3;
+    }
+
+    .navBar:active {
+        transform: scale(0.95);
+        border-left: 0.1px solid rgba(117, 117, 117, 0.466);
+        border-top: 0.1px solid rgba(117, 117, 117, 0.466);
+        border-bottom:0.1px solid rgba(117, 117, 117, 0.466);
+        box-shadow: -2px 2px 3px rgba(141, 139, 139, 0.2) ;
+    }
+
+    .line {
+        width: 30px;
+        height: 1px;
+        position: absolute;
+        background-color: white;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: 0.5s ease;
+    }
+
+    .line1 {
+        top: 35%;
+    }
+
+    .line1.click {
+        transform: translate(-15px, 5px) rotate(45deg) ;
+        background-color: black;
+    }
+    
+    .line2 {
+        top: 65%;
+    }
+
+    .line2.click {
+        transform: translate(-15px, -10px) rotate(-45deg);
+        background-color: black;
+    }
+
+    .navleft {
+        transform: rotate(180deg) translateY(52px);
+        left: 2%;
+    }
+
+    .menupop {
+        width: 100vw;
+        height: 100vh;
+        background-color: #fff;
+        position: absolute;
+        opacity: 1;
+        z-index: 2;
+        transition: display 0.5s ease-in;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    .menupop.hide {
+        display: none;
+    }
+    
+    .menupop a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .menupop h2 {
+        font-size: 2rem;
+    }
+
+    .menupop ul {
+        list-style: none;
+        display: flex;
+        padding: 0;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menupop li {
+        margin: 0 20px;
+
+    }
+
+    .menupop .fab {
+        color: black;
+        font-size: 1.5rem;
+    }
+
+
+   header h3 {
+       left: 30px;
+   }
+
+    
+    h1 {
+        font-size: 2.0rem;
+    }
+
+    .centerElements {
+        width: 500px;
+        top: 30%;
+    }
+
+    .firstSection h1 {
+        font-size: 2;
+    }
+
+    .fourthSection {
+        display: flex;
+        flex-direction: column;
+        padding: 30px 10px;
+        height: auto;
+        align-items: center;
+        justify-content: top;
+    }
+
+    .kitchemenu {
+        width: 100vw;
+        height: auto;
+        position: relative;
+        margin: 20px 0;
+        padding: 20px;
+        overflow:hidden
+    }
+    .kitchemenu h3{
+        margin: 0;
+    } 
+
+
+
+    .kitchemenu img {
+        width: 40%;
+        float : left;
+        margin-right: 15px;
+        
+    }
+
+
+    .text-container {
+        margin: 0 15px;
+    }
+
+    .section4Button {
+        position: relative;
+        /* bottom: 5%; */
+        /* left: 10px; */
+        transform: translateX(-50%);
+    }
+
+    .fifthSection h1 {
+        font-size: 2.5rem;
+    }
+
+    .sixthSection {
+       flex-wrap: wrap;
+       height: auto;
+    }
+
+    .chefs {
+        flex: 0 0 40%;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 710px) {
+
+    * {
+        overflow-x: hidden;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    /* * {
+        font-size: 0.8rem;
+    } */
+
+    .button {
+        padding: 8px 15px;
+        font-size: inherit;
+        margin: 20px 0;
+    }
+
+    .firstSection h1, p {
+        width: 90vw;
+        margin-left: auto;
+        margin-right: auto;
+       }
+
+    .nav {
+        font-size: 2.5rem;
+        z-index: 1;
+        top: 60%;
+    }
+
+    .navright {
+        right: 5%;
+    }
+
+    .navleft {
+        transform: rotate(180deg) translateY(35px);
+    }
+
+    .secondSection {
+        height: 50vh;
+    }
+
+    .thirdSection {
+        height: 70vh;
+    }
+
+    .section3Button {
+        top: 70%;
+    }
+
+    .fourthSection {
+        display: block;
+        padding: 0;
+    }
+
+    .kitchemenu {
+        padding: 0;
+        margin: 0;
+    }
+
+    .kitchemenu img {
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 15px;
+        width: 80vw;
+        height: auto; 
+        display: block; 
+        float: none;
+    }
+
+    .kitchemenu img:first-of-type {
+        margin-top: 70px;
+    }
+
+    .text-container {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    .kitchemenu h3{
+        margin: 15px auto;
+        width: auto;
+    }
+
+    
+    .section4Button {
+        position: relative;
+        margin-left: 100px;
+    }
+
+    .fifthSection {
+        height: 70vh;
+    }
+
+    .fifthSection  h1 {
+        font-size: inherit;
+        color: rgba(11, 12, 12, 0.863);
+    }
+
+    .sixthSection {
+        display: block;
+    }
+
+    .chefs {
+        margin: 30px 40px;
+    }
+
+    footer {
+        display: block;
+        height: auto;
+        padding: 30px 0;
+    }
+
+    .locations {
+        position: relative;
+        left: 10%;
+
+    }
+
+    .stateLocation {
+        margin: 50px 10% 0;
+        width: 200px;
+    
+    }
+
+} 

@@ -95,9 +95,9 @@ h3 {
     width: 100vw;
     height: 100vh;
     position: relative;
-    background-image: url("/Images/minced-lula-kebab-widescreen.jpg");
+    background-image: url("Images/minced-lula-kebab-widescreen.jpg");
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center center;
     background-size: cover;
     transition: background-image 1s ease-in;
 }
@@ -255,7 +255,7 @@ header ul {
 .thirdSection {
     width: 100vw;
     height: 100vh;
-    background-image: url("/Images/ronan-kruithof-PCE0T5i4pDI-unsplash\ \(1\).jpg");
+    background-image: url("Images/ronan-kruithof-PCE0T5i4pDI-unsplash\ \(1\).jpg");
     background-repeat: no-repeat;
     background-size:cover;
     background-position: center;
@@ -330,7 +330,7 @@ header ul {
 .fifthSection  {
     width: 100vw;
     height: 100vh;
-    background-image: url("/Images/Kicthen.jpg");
+    background-image: url("Images/Kicthen.jpg");
     background-size: cover;
     background-position: center;
     position: relative;
@@ -437,8 +437,9 @@ footer {
         height: 50px;
         background: none;
         border: none;
-        position: relative;
-        margin-right: 5%;
+        position: fixed;
+        right: 2%;
+        /* margin-right: 5%; */
         transition: 0.5s ease;
         cursor: pointer;
         z-index: 3;
@@ -468,7 +469,7 @@ footer {
     }
 
     .line1.click {
-        transform: translate(-15px, 5px) rotate(45deg) ;
+        transform: translate(-27px, 5px) rotate(45deg) ;
         background-color: black;
     }
     
@@ -477,7 +478,7 @@ footer {
     }
 
     .line2.click {
-        transform: translate(-15px, -10px) rotate(-45deg);
+        transform: translate(-27px, -10px) rotate(-45deg);
         background-color: black;
     }
 
@@ -490,7 +491,7 @@ footer {
         width: 100vw;
         height: 100vh;
         background-color: #fff;
-        position: absolute;
+        position: fixed;
         opacity: 1;
         z-index: 2;
         transition: display 0.5s ease-in;

@@ -17,13 +17,13 @@ const header = document.getElementById("header")
 
 const pageLinks = document.querySelectorAll(".pageLink")
 
-const img1 =  "/Images/FirstPageFood/slide1.jpg"
-const img2 =  "/Images/FirstPageFood/slide2.jpg"
-const img3 =  "/Images/FirstPageFood/slide3.jpg"
-const img4 =  "/Images/FirstPageFood/slide4.jpg"
-const img5 =  "/Images/FirstPageFood/slide5.jpg"
+const img1 =  "Images/FirstPageFood/slide1.jpg"
+const img2 =  "Images/FirstPageFood/slide2.jpg"
+const img3 =  "Images/FirstPageFood/slide3.jpg"
+const img4 =  "Images/FirstPageFood/slide4.jpg"
+const img5 =  "Images/FirstPageFood/slide5.jpg"
 
-
+let timesclicked = 0;
 
 pageLinks.forEach((link)=> {
     link.addEventListener("click", (e) => {
@@ -44,8 +44,10 @@ let lastscroll = 0;
        let str = window.pageYOffset
        if (str > lastscroll) {
            header.classList.remove("showBackground")
+           navBtn.style.position = "absolute"
        } else {
         header.classList.add("showBackground")
+        navBtn.style.position = "fixed"
         
         if (window.pageYOffset > 10){
             return;
@@ -88,11 +90,34 @@ navBtn.addEventListener ("click", ()=> {
         line.classList.toggle ("click");
 
     })
+        if (timesclicked == 0){
+            header.classList.remove("showBackground")
+        
+            menuPop.classList.toggle ("hide")
+            
+            HTML.style.overflow == "hidden" ?
+            HTML.style.overflow = "visible" :
+            HTML.style.overflow = "hidden"
+            ;
+            timesclicked = 1;
+        } else {
+            if (window.pageYOffset > 10){
+                navBtn.style.position = "absolute"
+            } else {
+                null;
+            }
 
-        menuPop.classList.toggle ("hide")
-        HTML.style.overflow == "hidden" ?
-        HTML.style.overflow = "visible" :
-        HTML.style.overflow = "hidden";
+            header.classList.remove("showBackground")
+        
+            menuPop.classList.toggle ("hide")
+            
+            HTML.style.overflow == "hidden" ?
+            HTML.style.overflow = "visible" :
+            HTML.style.overflow = "hidden"
+            ;
+            timesclicked = 0;
+        }
+        
       
         })
 
